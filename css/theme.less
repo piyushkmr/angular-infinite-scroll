@@ -1,0 +1,234 @@
+*{
+  border: 0px solid red;
+}
+@primary : #3FD8B7;
+body{
+  overflow-x:hidden;
+}
+.main-header{
+  height:80px;
+}
+.topbar{
+  background-color:#eee;
+  color:#fff;
+  position: relative;
+  top:0;
+  left:0;
+  width: 100%;
+  height:80px;
+  box-shadow: 0 5px 20px -10px #000;
+}
+.main-header .header-logo{
+  display:inline-block;
+  color:@primary;
+  float:left;
+}
+.topbar{
+  z-index:1000;
+  .navigation{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float:left;
+    li{
+      display: inline-block;
+      padding:25px;
+      text-align:center;
+      font-size:1.5em;
+      color:@primary;
+      &:hover{
+        background-color: @primary;
+        color:#fff;
+      }
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+  .search-box{
+    height:103px;
+    float:right;
+    text-align: right;
+    .likes-total{
+      color:#00AEDB;
+      font-size: 1.5em;
+      padding:5px 10px;
+    }
+    .infinite-toggle{
+      color:#00AEDB;
+      font-size: 1.5em;
+      padding:5px 10px;
+    }
+  }
+}
+.next,.prev{
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align: center;
+}
+.main-content{
+  margin-top:80px;
+  margin-bottom:80px;
+}
+.image-thumb{
+  max-width:100%;
+}
+
+.card-image-single{
+  width:100%;
+  min-height:300px;
+  box-shadow:0px 5px 20px -5px #666666;
+  border-radius: 10px;
+  overflow:hidden;
+  margin:10px 5px 20px;
+  .card-image{
+    width:100%;
+    padding:5px;
+    overflow:hidden;
+    background-image:url("../img/loader.GIF");
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height:100px;
+    position:relative;
+    .card-likes{
+      position:absolute;
+      left:0;
+      top:0;
+      padding:10px;
+      font-size: 1.5em;
+      color:#fff;
+      text-shadow:1px 1px 3px #000;
+    }
+    .card-like{
+      width:100%;
+      height:100%;
+      position:absolute;
+      background-color:#000;
+      opacity:0;
+      z-index: 50;
+      text-align: center;
+      transition:0.5s;
+      &:hover{
+        opacity:0.5;
+        transition:0.5s;
+      }
+      .fa{
+        width:90px;
+        height:90px;
+        color:#fff;
+        font-size: 3em;
+        top:50%;
+        margin-top:-45px;
+        position:relative; 
+        border:2px solid #fff;
+        border-radius: 50%;
+        padding:20px; 
+        cursor: pointer;
+        transition:0.5s;
+        &:hover{
+          background-color: #fff;
+          color:#000;
+          transition:0.5s;
+        }
+      }
+    }
+    .shadow {
+      position: relative;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px -5px #666 inset;
+      img {
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        border-radius: 5px;
+        &.loading{
+          opacity:0;
+        }
+      }
+    }
+  }
+  .card-name{
+    padding:5px 10px;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .card-desc{
+    padding:5px 10px;
+  }
+  .card-footer{
+    border-top:1px solid #eee;
+    padding:10px;
+    font-weight: bold;
+    span{
+      font-weight: bold;
+      margin-right:20px;
+    }
+    .card-extra{
+      text-align:center;
+      margin:10px -15px -10px;
+      .fa{
+        padding:10px 5px;
+      }
+    }
+  }
+}
+.image-loader{
+  width:100%;
+  text-align:center;
+  padding:100px;
+}
+.hidden{
+  display:none;
+}
+//*************************Charts
+.chart{
+  display:table;
+  table-layout: fixed;   
+  width:60%;
+  max-width:700px;
+  height:200px;
+  margin:0 auto;
+  margin-bottom: 20px;
+  background-image:linear-gradient(bottom, rgba(0, 0, 0, 0.1) 2%, transparent 2%);
+  background-size: 100% 50px;
+  background-position: left top;
+  
+  li{
+    position:relative;
+    display:table-cell;
+    vertical-align:bottom;
+    height:200px;
+  }
+  .count{
+    width:100%;
+    display:block;
+    text-align:center;
+  }
+  .chart-bar{
+    margin:0 1em;
+    display: block;
+    background: rgb(41, 128, 185, .75);
+    animation: draw 1s ease-in-out;
+    
+    &:before{
+      position:absolute;
+      left:0;right:0;top:100%;
+      padding:5px 1em 0;
+      display:block;
+      text-align:center;
+      content:attr(title);
+      word-wrap: break-word;
+    }
+    
+  }
+  
+}
+
+@keyframes draw{
+  0%{height:0;} 
+}
+@media screen and (max-width:768px){
+  .sidebar{
+    position: relative;
+  }
+}
